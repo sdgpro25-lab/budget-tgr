@@ -456,7 +456,7 @@ img{max-width:100%;}
           </div>
         </div>
         <div class="form-row">
-          <label>Montant (€)</label>
+          <label>Montant (F)</label>
           <input id="addAmount" class="form-control" type="number" inputmode="decimal" placeholder="0.00" min="0" step="0.01"/>
         </div>
         <div class="form-row">
@@ -610,7 +610,7 @@ img{max-width:100%;}
           <button class="type-btn income" id="editTypeIncome" onclick="selectEditType('income')">💰 Revenu</button>
         </div>
       </div>
-      <div class="form-row"><label>Montant (€)</label><input id="editAmount" class="form-control" type="number" inputmode="decimal" min="0" step="0.01"/></div>
+      <div class="form-row"><label>Montant (F)</label><input id="editAmount" class="form-control" type="number" inputmode="decimal" min="0" step="0.01"/></div>
       <div class="form-row"><label>Catégorie</label><select id="editCategory" class="form-control"></select></div>
       <div class="form-row"><label>Description</label><input id="editDescription" class="form-control" type="text"/></div>
       <div class="form-row"><label>Date</label><input id="editDate" class="form-control" type="date"/></div>
@@ -1180,7 +1180,7 @@ async function api(qs) {
 async function apiPost(body) {
   const res = await fetch(API_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
     body: JSON.stringify(body)
   });
   if (!res.ok) throw new Error('HTTP ' + res.status);
